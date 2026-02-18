@@ -1,0 +1,20 @@
+[project]
+name = "ring-buffer"
+version = "0.1.0"
+description = "A versatile, high-performance ring buffer implementation for Python supporting standard lists, NumPy arrays, and shared memory for inter-process communication."
+authors = [
+    {name = "Loïc Combis", email = "combis.loic@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.poetry]
+packages = [{include = "ring_buffer", from = "src"}]
+
+[project.optional-dependencies]
+numpy = ["numpy>=1.23.2"]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
