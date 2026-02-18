@@ -1,7 +1,7 @@
-from ring_buffer.base_ring_buffer import RingBuffer 
+from ring_buffer.base_ring_buffer import BaseRingBuffer 
 
 
-class BytesRingBuffer(RingBuffer[bytes]):
+class BytesRingBuffer(BaseRingBuffer[bytes]):
     def __init__(self, 
                 slots: int, 
                 item_size: int,

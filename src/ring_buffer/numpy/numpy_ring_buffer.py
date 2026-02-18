@@ -11,10 +11,10 @@ except ImportError:
 
 from typing import Optional
 
-from ring_buffer.base_ring_buffer import RingBuffer 
+from ring_buffer.base_ring_buffer import BaseRingBuffer 
 
 
-class NumpyRingBuffer(RingBuffer[np.ndarray]):
+class NumpyRingBuffer(BaseRingBuffer[np.ndarray]):
     def __init__(self, 
                 slots: int, 
                 dtype: np.dtype, 

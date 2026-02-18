@@ -3,7 +3,7 @@ import struct
 from typing import TypeVar
 from multiprocessing import shared_memory
 
-from ring_buffer import RingBuffer
+from .abstract_ring_buffer import RingBuffer
 
 T = TypeVar("T")
 
