@@ -13,21 +13,21 @@ class BaseRingBuffer(RingBuffer[T]):
 
         
     @property
-    def _read_idx(self) -> int:
+    def _r_idx(self) -> int:
         """Get current read index."""
-        return self._r_idx
+        return self._r_idx_shm
 
-    @_read_idx.setter
-    def _read_idx(self, value: int) -> None:
+    @_r_idx.setter
+    def _r_idx(self, value: int) -> None:
         """Set current read index."""
-        self._r_idx = value
+        self._r_idx_shm = value
 
     @property
-    def _write_idx(self) -> int:
+    def _w_idx(self) -> int:
         """Get current write index."""
-        return self._w_idx
+        return self._w_idx_shm
 
-    @_write_idx.setter
-    def _write_idx(self, value: int) -> None:
+    @_w_idx.setter
+    def _w_idx(self, value: int) -> None:
         """Set current write index."""
-        self._w_idx = value
+        self._w_idx_shm = value

@@ -22,6 +22,7 @@ class NumpyShmRingBuffer(ShmRingBuffer[np.ndarray]):
                 dtype: np.dtype, 
                 shape: Optional[tuple[int, ...]] = None) -> None:
         
+        dtype = np.dtype(dtype)
         item_size: int
 
         if shape is None:

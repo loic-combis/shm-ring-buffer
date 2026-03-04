@@ -79,15 +79,16 @@ class RingBuffer(ABC, Generic[T]):
         
         return self._read(self._r_idx)
 
-    def release(self) -> None:
+    def release(self) -> bool:
         """
         Advances the read index, effectively freeing the slot 
         that was just read.
         """
         if not self.can_read():
-            return
+            return False
 
         self._r_idx = (self._r_idx + 1) % self._slots
+        return True
 
     # --- Abstract Storage Methods ---
 

@@ -23,6 +23,7 @@ class NumpyRingBuffer(BaseRingBuffer[np.ndarray]):
         
         super().__init__(slots=slots)
 
+        dtype = np.dtype(dtype)
         item_size: int
 
         if shape is None:
