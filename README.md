@@ -20,27 +20,25 @@ Python: 3.11 or higher
 #### Using pip:
 ```bash
 # Basic installation
-pip install ring-buffer
+pip install shm-ring-buffer
 
 # With NumPy support
-pip install ring-buffer[numpy]
+pip install shm-ring-buffer[numpy]
 ```
 
 #### Using poetry:
 ```bash
 # Basic installation
-poetry add ring-buffer
+poetry add shm-ring-buffer
 
 # With NumPy support
-poetry add ring-buffer -E numpy
+poetry add shm-ring-buffer -E numpy
 ```
 
 ## 🛠 Usage & Architecture
-The SPSR Constraint
-[!WARNING]
 
-### Single-Producer Single-Reader (SPSR): 
-This implementation is lock-free to maximize throughput. It is not thread-safe for multiple concurrent writers or multiple concurrent readers. Ensure your architecture follows the SPSR pattern.
+> [!WARNING]
+> **Single-Producer Single-Reader (SPSR):** This implementation is lock-free to maximize throughput. It is not thread-safe for multiple concurrent writers or multiple concurrent readers. Ensure your architecture follows the SPSR pattern.
 
 ### Shared Memory IPC
 Shared memory is the fastest method for IPC in Python. This library implements two primary shared memory buffers:
